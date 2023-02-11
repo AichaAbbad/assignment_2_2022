@@ -9,4 +9,13 @@ The main goal of this assignment is to implement a ROS package in which we devel
 # Node A
 As described earlier, "Node A" implements an action client that allows the user to set or cancel the target goal. Moreover, it ublishes and velocity as a costum message based the values published in "/odom" topic.
 
-The flowchart of "Node A" is represented as follows: - OpenAI
+* The node start by creating a "SimpleActionClient".
+* Subcribe to get the odometry data from "/odom".
+* Call the "sub_callback" function, in which we get the current data (x, y, x_vel, y_vel).
+* Call the "publish_msg" function in which we publish data on "position_and_velecity".
+* Call the "main" function in which we ask the client for the desired choice: "set goal target", "cancel the goal", or "exit".
+
+The flowchart of "Node A" is represented as follows: 
+
+![Flowchart diagram of Node A](https://github.com/AichaAbbad/assignment_2_2022/blob/949cb0a79b6ff02652cf031174b4cd5d49c419ea/node_a.png)
+
